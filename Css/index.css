@@ -1,0 +1,9 @@
+#image-sizing {
+    width: 600px;
+    height: 400px;
+    margin-left: 100px;
+    margin-right: 20px;
+    margin-top: 40px;
+    border-radius: 10px;
+    border: 3px solid #5fc7cf;;
+}

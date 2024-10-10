@@ -1,2 +1,0 @@
-# OnePiece
-One Piece
