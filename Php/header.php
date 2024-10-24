@@ -9,13 +9,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active" id="navbar-text">
-                <a class="nav-link" href="#">Pirates</a>
+                <a class="nav-link" href="pirates.php">Pirates</a>
             </li>
             <li class="nav-item active" id="navbar-text">
-                <a class="nav-link" href="#">Marines</a>
+                <a class="nav-link" href="marines.php">Marines</a>
             </li>
             <li class="nav-item active" id="navbar-text">
-                <a class="nav-link" href="#">Crews</a>
+                <a class="nav-link" href="crew.php">Crews</a>
             </li>
         </ul>
     </div>
