@@ -3,7 +3,7 @@ include 'header.php';
 ?>
 <html>
     <head>
-        <title>One Piece Fan Page</title>
+        <title>Stupid Ape</title>
         <link rel="stylesheet" type="text/css" href="../Css/index.css">
     </head>
     <body>
@@ -18,6 +18,9 @@ include 'header.php';
 <div>
     <img src="../Images/Luffy_and_His_Crew.webp" alt="Luffy and his crew" id="image-sizing">
     <img src="../Images/Dragon_at_Age_33.webp" alt="Monkey D dragon" id="image-sizing">
+    <img src="../Images/17ff1bb38a0735fbeb77ac065793521f.png" alt="Wano" id="image-sizing">
+    <img src="../Images/Monkey_D._Garp_Anime_Infobox.webp" alt="Monkey D garp" id="image-sizing">
+</div>
 </div>
 
 <div>
