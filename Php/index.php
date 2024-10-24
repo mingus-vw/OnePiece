@@ -24,14 +24,7 @@ include 'header.php';
     <img src="../Images/17ff1bb38a0735fbeb77ac065793521f.png" alt="Wano" id="image-sizing">
     <img src="../Images/Monkey_D._Garp_Anime_Infobox.webp" alt="Monkey D garp" id="image-sizing">
 </div>
-<div>
-    <img src="../Images/17ff1bb38a0735fbeb77ac065793521f.png" alt="Wano" id="image-sizing">
-    <img src="../Images/Monkey_D._Garp_Anime_Infobox.webp" alt="Monkey D garp" id="image-sizing">
-</div>
-<div>
-    <img src="../Images/17ff1bb38a0735fbeb77ac065793521f.png" alt="Wano" id="image-sizing">
-    <img src="../Images/Monkey_D._Garp_Anime_Infobox.webp" alt="Monkey D garp" id="image-sizing">
-</div>
+
     </body>
 </html>
 <?php
