@@ -1,4 +1,5 @@
 <?php
+include '../Database/connection.php';
 include 'header.php';
 ?>
 <html>
