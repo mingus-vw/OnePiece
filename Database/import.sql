@@ -19,8 +19,8 @@ CREATE TABLE Crews (
 
 INSERT INTO Crews (name, crew_description, captain_name, debut_anime, debut_manga, main_ship_name, main_ship_description, main_ship_image_url, jolly_roger_image_url)
 VALUES
-('Straw Hat Pirates', 'The crew of the future Pirate King, Monkey D. Luffy.', 'Monkey D. Luffy', 'Episode 1', 'Chapter 1', 'Thousand Sunny', 'The Straw Hat Pirates'' main ship.', 'https://onepiece.fandom.com/wiki/Thousand_Sunny', 'https://onepiece.fandom.com/wiki/Straw_Hat_Pirates'),
-('Whitebeard Pirates', 'The crew of the late Whitebeard, Edward Newgate.', 'Edward Newgate', 'Episode 151', 'Chapter 234', 'Moby Dick', 'The main ship of the Whitebeard crew.', 'https://onepiece.fandom.com/wiki/Moby_Dick', 'https://onepiece.fandom.com/wiki/Whitebeard_Pirates');
+('Straw Hat Pirates', 'The crew of the future Pirate King, Monkey D. Luffy.', 'Monkey D. Luffy', 'Episode 1', 'Chapter 1', 'Thousand Sunny', 'The Straw Hat Pirates'' main ship.', 'https://static.wikia.nocookie.net/onepiece/images/b/b1/Thousand_Sunny_Infobox.png', 'https://static.wikia.nocookie.net/onepiece/images/8/87/Straw_Hat_Pirates%27_Jolly_Roger.png'),
+('Whitebeard Pirates', 'The crew of the late Whitebeard, Edward Newgate.', 'Edward Newgate', 'Episode 151', 'Chapter 234', 'Moby Dick', 'The main ship of the Whitebeard crew.', 'https://static.wikia.nocookie.net/onepiece/images/a/a1/Moby_Dick_Infobox.png', 'https://static.wikia.nocookie.net/onepiece/images/4/45/Whitebeard_Pirates%27_Jolly_Roger.png');
 
 
 CREATE TABLE Characters (
@@ -62,7 +62,7 @@ VALUES
 ('Franky', 'Cyborg Franky', 'Cyborg', 'Human', 'Alive', 'South Blue', 34, 36, 'Shipwright', TRUE, FALSE, 1, 83000000, NULL, FALSE, FALSE, FALSE, 'Episode 329', 'Chapter 436', 'The shipwright of the Straw Hat Pirates and future All Blue.', 'https://static.wikia.nocookie.net/onepiece/images/8/8c/Franky_Anime_Post_Timeskip_Infobox.png'),
 ('Jinbe', 'Knight of the Sea Jinbe', 'Knight of the Sea', 'Fishman', 'Alive', 'Grand Line', 44, 46, 'Helmsman', TRUE, FALSE, 1, 438000000, NULL, TRUE, TRUE, FALSE, 'Episode 439', 'Chapter 528', 'The helmsman of the Straw Hat Pirates and future All Blue.', 'https://static.wikia.nocookie.net/onepiece/images/8/81/Jinbe_Anime_Infobox.png'),
 ('Edward Newgate', 'Whitebeard', 'Whitebeard', 'Human', 'Deceased', 'Unknown', 72, 74, 'Pirate', TRUE, FALSE, 2, 550000000, 'Gura Gura no Mi', TRUE, TRUE, TRUE, 'Episode 151', 'Chapter 234', 'The late captain of the Whitebeard Pirates and former Yonko.', 'https://static.wikia.nocookie.net/onepiece/images/b/b7/Edward_Newgate_Anime_Infobox.png'),
-('Smoker', 'White Hunter Smoker', 'White Hunter', 'Human', 'Alive', 'Grand Line', 36, 38, 'Marine', FALSE, TRUE, NULL, 0, NULL, TRUE, TRUE, FALSE, 'Episode 48', 'Chapter 98', 'The Marine Vice Admiral and former Marine Captain.', 'https://static.wikia.nocookie.net/onepiece/images/c/c4/Smoker_Anime_Post_Timeskip_Infobox.png'),
+('Smoker', 'White Hunter Smoker', 'White Hunter', 'Human', 'Alive', 'Grand Line', 36, 38, 'Marine', FALSE, TRUE, NULL, 0, 'Moku Moku no Mi', TRUE, TRUE, FALSE, 'Episode 48', 'Chapter 98', 'The Marine Vice Admiral and former Marine Captain.', 'https://static.wikia.nocookie.net/onepiece/images/c/c4/Smoker_Anime_Post_Timeskip_Infobox.png'),
 ('Portgas D. Ace', 'Fire Fist Ace', 'Fire Fist', 'Human', 'Deceased', 'South Blue', 20, 22, 'Pirate', TRUE, FALSE, 2, 550000000, 'Mera Mera no Mi', TRUE, TRUE, TRUE, 'Episode 94', 'Chapter 154', 'The late captain of the Spade Pirates and former Whitebeard Pirates 2nd Division Commander.', 'https://static.wikia.nocookie.net/onepiece/images/4/4f/Portgas_D._Ace_Anime_Infobox.png'),
 ('Monkey D. Garp', 'Garp the Fist', 'Garp the Fist', 'Human', 'Alive', 'Unknown', 78, 80, 'Marine', FALSE, TRUE, NULL, 0, NULL, TRUE, TRUE, TRUE, 'Episode 45', 'Chapter 91', 'The Marine Vice Admiral and former Marine Instructor.', 'https://static.wikia.nocookie.net/onepiece/images/e/e1/Monkey_D._Garp_Anime_Infobox.png');
 
