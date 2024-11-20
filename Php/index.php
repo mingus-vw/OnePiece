@@ -3,7 +3,7 @@ include 'header.php';
 ?>
 <html>
     <head>
-        <title>Stupid Ape</title>
+        <title>One Piece</title>
         <link rel="stylesheet" type="text/css" href="../Css/index.css">
     </head>
     <body>
