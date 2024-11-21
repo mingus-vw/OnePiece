@@ -16,7 +16,7 @@ include 'header.php';
         </div>
     </div>
 </div>
-<div>
+<div class="image-container">
     <img src="../Images/Luffy_and_His_Crew.webp" alt="Luffy and his crew" id="image-sizing">
     <img src="../Images/Dragon_at_Age_33.webp" alt="Monkey D dragon" id="image-sizing">
     <img src="../Images/17ff1bb38a0735fbeb77ac065793521f.png" alt="Wano" id="image-sizing">

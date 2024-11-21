@@ -1,9 +1,23 @@
+.image-container {
+    display: flex;
+    flex-wrap: wrap; /* Zorgt ervoor dat de afbeeldingen op kleinere schermen omslaan */
+    justify-content: center; /* Centraal uitlijnen */
+    gap: 20px; /* Ruimte tussen de afbeeldingen */
+    margin-top: 40px; /* Ruimte boven de afbeeldingengroep */
+}
+
 #image-sizing {
-    width: 600px;
-    height: 400px;
-    margin-left: 100px;
-    margin-right: 20px;
-    margin-top: 40px;
+    width: 100%; /* Standaard breedte */
+    max-width: 700px; /* Maximale breedte voor grote schermen */
+    max-height:400px;
+    height: auto; /* Verhoudingen behouden */
     border-radius: 10px;
-    border: 3px solid #5fc7cf;;
+    border: 3px solid #5fc7cf;
+}
+
+/* Media query voor kleinere schermen */
+@media (max-width: 768px) {
+    #image-sizing {
+        max-width: 90%; /* Minder breedte op kleine schermen */
+    }
 }
