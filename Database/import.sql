@@ -176,3 +176,9 @@ INSERT INTO Ships (name, name_japanese, status, type, captain_name, crew_id, deb
 VALUES
 ('Thousand Sunny', 'サウザンドサニー号', 'Active', 'Ship', 'Monkey D. Luffy', 1, 'Episode 317', 'Chapter 430', 'https://onepiece.fandom.com/wiki/Thousands_Sunny'),
 ('Moby Dick', 'モビーディック号', 'Destroyed', 'Large Battleship', 'Edward Newgate', 2, 'Episode 151', 'Chapter 234', 'https://onepiece.fandom.com/wiki/Moby_Dick');
+
+CREATE TABLE Accounts (
+    id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR (100) NOT NULL,
+    password VARCHAR (100) NOT NULL
+);
