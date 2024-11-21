@@ -4,9 +4,9 @@ include 'header.php';
 include '../Database/connection.php';
 
 if (isset($_GET['id'])) {
-  $characterStmt = $pdo->prepare("SELECT * FROM DevilFruits WHERE id = :id");
-  $characterStmt->execute(['id' => intval($_GET['id'])]);
-  $character = $characterStmt->fetch();
+    $characterStmt = $pdo->prepare("SELECT * FROM DevilFruits WHERE id = :id");
+    $characterStmt->execute(['id' => intval($_GET['id'])]);
+    $character = $characterStmt->fetch();
 
     if (!$character) {
         header('Location: devilfruits.php');
@@ -63,6 +63,7 @@ if (isset($_GET['id'])) {
       <div class="col-lg-8">
         <h2>Devilfruit Information</h2>
         <table class="table table-striped">
+            
           <tbody>
             <tr>
               <th>Name</th>
@@ -93,13 +94,18 @@ if (isset($_GET['id'])) {
                 <td><?php echo htmlspecialchars($character['debut_manga']); ?></td>
             </tr>
             </tbody>
+        </table>
+        </div>
         <div class="col-lg-4">
-        <h2>Description</h2>
-        <p><?php echo nl2br(htmlspecialchars($character['devilfruit_description'])); ?></p>
-      </div>
-    </div>
+          <h2>Devilfruit Description</h2>
+          <p><?php echo htmlspecialchars($character['devilfruit_description']); ?></p>
+        </div>
+        </div>
 
     <div class="mt-4">
       <a href="devilfruits.php" class="btn btn-secondary">Back to Devilfruits</a>
     </div>
   </div>
+    <?php include 'footer.php'; ?>
+</body>
+</html>
