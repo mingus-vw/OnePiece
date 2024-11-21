@@ -133,7 +133,7 @@ VALUES
 ('Hana Hana no Mi', 'ハナハナの実', 'Paramecia', 'A Paramecia-type Devil Fruit that allows the user to sprout body parts from any surface.', 7, NULL, 'Episode 67', 'Chapter 114', 'https://static.wikia.nocookie.net/onepiece/images/2/21/Hana_Hana_no_Mi_Infobox.png'),
 ('Yomi Yomi no Mi', 'ヨミヨミの実', 'Paramecia', 'A Paramecia-type Devil Fruit that allows the user to come back to life after dying.', 8, NULL, 'Episode 337', 'Chapter 442', 'https://static.wikia.nocookie.net/onepiece/images/3/3b/Yomi_Yomi_no_Mi_Infobox.png'),
 ('Gura Gura no Mi', 'グラグラの実', 'Paramecia', 'A Paramecia-type Devil Fruit that allows the user to create earthquakes.', 11, NULL, 'Episode 151', 'Chapter 234', 'https://static.wikia.nocookie.net/onepiece/images/e/e3/Gura_Gura_no_Mi_Infobox.png'),
-('Mera Mera no Mi', 'メラメラの実', 'Logia', 'A Logia-type Devil Fruit that allows the user to become a fire human.', 13, 15, 'Episode 94', 'Chapter 154', 'https://static.wikia.nocookie.net/onepiece/images/8/8c/Mera_Mera_no_Mi_Infobox.png'),
+('Mera Mera no Mi', 'メラメラの実', 'Logia', 'A Logia-type Devil Fruit that allows the user to become a fire human.', 15, 13, 'Episode 94', 'Chapter 154', 'https://static.wikia.nocookie.net/onepiece/images/8/8c/Mera_Mera_no_Mi_Infobox.png'),
 ('Moku Moku no Mi', 'モクモクの実', 'Logia', 'A Logia-type Devil Fruit that allows the user to become a smoke human.', 14, NULL, 'Episode 325', 'Chapter 441', 'https://static.wikia.nocookie.net/onepiece/images/8/8d/Moku_Moku_no_Mi_Infobox.png');
 
 INSERT INTO Pirates (character_id, crew_id, bounty)
