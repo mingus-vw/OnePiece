@@ -18,7 +18,7 @@
                 <a class="nav-link" href="crew.php">Crews</a>
             </li>
             <li class="nav-item active" id="navbar-text">
-                <a class="nav-link" href="#">Devil fruits</a>
+                <a class="nav-link" href="devilfruits.php">Devil fruits</a>
             </li>
         </ul>
     </div>
