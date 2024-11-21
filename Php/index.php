@@ -4,7 +4,7 @@ include 'header.php';
 ?>
 <html>
     <head>
-        <title>Stupid Ape</title>
+        <title>Main page</title>
         <link rel="stylesheet" type="text/css" href="../Css/index.css">
     </head>
     <body>

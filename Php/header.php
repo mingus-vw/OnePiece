@@ -22,6 +22,9 @@
             <li class="nav-item active" id="navbar-text">
                 <a class="nav-link" href="#">Devil fruits</a>
             </li>
+            <li class="nav-item active" id="navbar-text">
+                <a class="nav-link" href="islands.php">Islands</a>
+            </li>
         </ul>
     </div>
     <button type="button" class="btn" id="sign-up">Sign up</button>
