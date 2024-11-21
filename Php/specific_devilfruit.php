@@ -12,31 +12,17 @@ if (isset($_GET['id'])) {
         header('Location: devilfruits.php');
         exit;
     }
+
+    $userStmt = $pdo->prepare("SELECT name FROM Characters WHERE id = :user_id");
+    $userStmt->execute(['user_id' => $character['user_id']]);
+    $characterUser = $userStmt->fetch();
+
+    $formerUserStmt = $pdo->prepare("SELECT name FROM Characters WHERE id = :former_user_id");
+    $formerUserStmt->execute(['former_user_id' => $character['former_user_id']]);
+    $characterFormerUser = $formerUserStmt->fetch();
 } else {
     header('Location: devilfruits.php');
     exit;
-
-    $userStmt = $pdo->query("SELECT * FROM Users");
-    $users = $userStmt->fetchAll(PDO::FETCH_ASSOC);
-
-    $characterUser = null;
-    foreach ($users as $user) {
-        if ($user['id'] === $character['user_id']) {
-            $characterUser = $user;
-            break;
-        }
-    }
-
-    $formerUserStmt = $pdo->query("SELECT * FROM Users");
-    $formerUsers = $formerUserStmt->fetchAll(PDO::FETCH_ASSOC);
-
-    $characterFormerUser = null;
-    foreach ($formerUsers as $formerUser) {
-        if ($formerUser['id'] === $character['former_user_id']) {
-            $characterFormerUser = $formerUser;
-            break;
-        }
-    }
 }
 ?>
 
@@ -78,12 +64,12 @@ if (isset($_GET['id'])) {
               <td><?php echo htmlspecialchars($character['type']); ?></td>
             </tr>
             <tr>
-              <th>User</th>
-                <td><?php echo htmlspecialchars($character['user_id']); ?></td>
+            <th>User</th>
+                <td><?php echo htmlspecialchars($characterUser['name'] ?? 'N/A'); ?></td>
             </tr>
             <tr>
-              <th>Former User</th>
-              <td><?php echo htmlspecialchars($character['former_user_id']); ?></td>
+            <th>Former User</th>
+                <td><?php echo htmlspecialchars($characterFormerUser['name'] ?? 'N/A'); ?></td>
             </tr>
             <tr>
                 <th>Debut Anime</th>
