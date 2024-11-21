@@ -11,6 +11,10 @@
   <?php include '../Database/connection.php' ?>
   <?php include 'header.php'; ?>
 
+  <div class="container pt-3 justify-content-center d-flex">
+    <a href="create_devilfruit.php" class="btn btn-success">Create New Devilfruit</a>
+  </div>
+
   <div class="container pt-5">
     <div class="row">
       <?php
