@@ -30,6 +30,7 @@
       <?php } ?>
     </div>
   </div>
+  <a href="create_crew.php" class="createButton">Create Crew</a>
 
   <?php include 'footer.php'; ?>
 </body>

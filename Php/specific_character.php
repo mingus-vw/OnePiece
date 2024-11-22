@@ -36,7 +36,7 @@ if (isset($_GET['id'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php echo htmlspecialchars($character['name']); ?> - Character Details</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../Css/specific_character.css">
+  <link rel="stylesheet" href="../../Css/specific_character.css">
 </head>
 <body>
   <div class="container my-5">
@@ -94,7 +94,7 @@ if (isset($_GET['id'])) {
                     }
                     ?>
                     <?php if ($characterCrew): ?>
-                    <a href="specific_crew.php?id=<?php echo $characterCrew['id']; ?>" class="btn btn-secondary ms-3">See crew</a>
+                    <a href="../specific_crew.php?id=<?php echo $characterCrew['id']; ?>" class="btn btn-secondary ms-3">See crew</a>
                     <?php endif; ?>
                 </td>
             </tr>
