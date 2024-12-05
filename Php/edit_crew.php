@@ -1,6 +1,5 @@
 <?php
 
-//update crew code
 include '../Database/connection.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
