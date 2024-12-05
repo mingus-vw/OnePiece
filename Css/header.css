@@ -45,6 +45,142 @@
     color: white;
 }
 
-#sign-up {
-    background-color: white;
-}
+.navbar {
+    background-color: #5fc7cf;
+    overflow: hidden;
+    font-weight: normal;
+  }
+  
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); 
+    z-index: 1;
+  }
+  
+  .login-popup, .register-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #5fc7cf;
+    padding: 20px;
+    border: 1px solid #ffffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+    width: 600px;
+    height: 500px;
+    border-radius: 25px;
+    color: #ffffff;
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+  
+  .sign-in-inputfield {
+    background-color: #5fc7cf;
+    border: 1px solid #ccc;
+    width: 100%;
+    margin-bottom: 10px;
+    color: #ccc;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .login-button, .register-popup .login-button {
+    background-color: #ffffff;
+    color: black;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .signinbutton, .register-popup {
+    background-color: #ffffff;
+    color: black;
+    width: 110px;
+    border: 2px solid #5fc7cf;
+    padding: 7px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-family: Verdana, sans-serif;
+  }
+  
+  .sign-in-logo img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .register-in-logo img {
+    max-width: 100%;
+    height: auto;
+    flex: 1;
+  }
+  
+  .login-content {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .register-popup h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .register-popup .sign-in-inputfield input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .register-popup .login-button:hover {
+    background-color: #ffffff;
+  }
+  
+  .user-info {
+    color: #ffffff;
+  }
+  
+  .logout-button {
+    background-color: #ffffff;
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .logout-button:hover {
+    background-color: #ffffff;
+  }
+  
+.login-button, #open-register {
+    background-color: #ffffff;
+    color: black;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-family: Verdana, sans-serif;
+    cursor: pointer;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+  }
+  
+  .login-button:hover, #open-register:hover {
+    background-color: #737375;
+  }

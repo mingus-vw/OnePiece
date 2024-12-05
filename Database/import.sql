@@ -161,18 +161,24 @@ VALUES
 
 INSERT INTO Islands (name, name_japanese, island_location, island_type, island_description, debut_anime, debut_manga, image_url)
 VALUES
-('Alabasta', 'アラバスタ王国', 'Grand Line', 'Kingdom', 'The desert kingdom of Alabasta.', 'Episode 62', 'Chapter 155', 'https://onepiece.fandom.com/wiki/Alabasta'),
-('Drum Island', 'ドクター王国', 'Grand Line', 'Kingdom', 'The snowy kingdom of Drum Island.', 'Episode 81', 'Chapter 134', 'https://onepiece.fandom.com/wiki/Drum_Island'),
-('Enies Lobby', 'エニエス・ロビー', 'Grand Line', 'Judicial Island', 'The judicial island of Enies Lobby.', 'Episode 264', 'Chapter 367', 'https://onepiece.fandom.com/wiki/Enies_Lobby'),
-('Fishman Island', '魚人島', 'Grand Line', 'Island', 'The underwater island of Fishman Island.', 'Episode 526', 'Chapter 603', 'https://onepiece.fandom.com/wiki/Fishman_Island'),
-('Marineford', 'マリンフォード', 'Grand Line', 'Island', 'The Marine Headquarters of Marineford.', 'Episode 457', 'Chapter 552', 'https://onepiece.fandom.com/wiki/Marineford'),
-('Punk Hazard', 'パンクハザード', 'New World', 'Island', 'The volcanic island of Punk Hazard.', 'Episode 579', 'Chapter 654', 'https://onepiece.fandom.com/wiki/Punk_Hazard'),
-('Sabaody Archipelago', 'シャボンディ諸島', 'Grand Line', 'Archipelago', 'The archipelago of Sabaody.', 'Episode 385', 'Chapter 498', 'https://onepiece.fandom.com/wiki/Sabaody_Archipelago'),
-('Skypiea', 'スカイピア', 'Grand Line', 'Island', 'The sky island of Skypiea.', 'Episode 144', 'Chapter 239', 'https://onepiece.fandom.com/wiki/Skypiea'),
-('Water 7', 'ウォーターセブン', 'Grand Line', 'Island', 'The water city of Water 7.', 'Episode 229', 'Chapter 322', 'https://onepiece.fandom.com/wiki/Water_7');
+('Alabasta', 'アラバスタ王国', 'Grand Line', 'Kingdom', 'The desert kingdom of Alabasta.', 'Episode 62', 'Chapter 155', 'https://static.wikia.nocookie.net/onepiece/images/2/29/Arabasta_Kingdom_Infobox.png'),
+('Drum Island', 'ドクター王国', 'Grand Line', 'Kingdom', 'The snowy kingdom of Drum Island.', 'Episode 81', 'Chapter 134', 'https://static.wikia.nocookie.net/onepiece/images/1/15/Drum_Island_Infobox.png'),
+('Enies Lobby', 'エニエス・ロビー', 'Grand Line', 'Judicial Island', 'The judicial island of Enies Lobby.', 'Episode 264', 'Chapter 367', 'https://static.wikia.nocookie.net/onepiece/images/a/ad/Enies_Lobby_Infobox.png'),
+('Fishman Island', '魚人島', 'Grand Line', 'Island', 'The underwater island of Fishman Island.', 'Episode 526', 'Chapter 603', 'https://static.wikia.nocookie.net/onepiece/images/7/78/Fish-Man_Island_Infobox.png'),
+('Marineford', 'マリンフォード', 'Grand Line', 'Island', 'The Marine Headquarters of Marineford.', 'Episode 457', 'Chapter 552', 'https://static.wikia.nocookie.net/onepiece/images/d/db/G-1_Infobox.png'),
+('Punk Hazard', 'パンクハザード', 'New World', 'Island', 'The volcanic island of Punk Hazard.', 'Episode 579', 'Chapter 654', 'https://static.wikia.nocookie.net/onepiece/images/3/3a/Punk_Hazard_Infobox.png'),
+('Sabaody Archipelago', 'シャボンディ諸島', 'Grand Line', 'Archipelago', 'The archipelago of Sabaody.', 'Episode 385', 'Chapter 498', 'https://static.wikia.nocookie.net/onepiece/images/c/ca/Sabaody_Archipelago_Infobox.png'),
+('Skypiea', 'スカイピア', 'Grand Line', 'Island', 'The sky island of Skypiea.', 'Episode 144', 'Chapter 239', 'https://static.wikia.nocookie.net/onepiece/images/4/44/Skypiea_Infobox.png'),
+('Water 7', 'ウォーターセブン', 'Grand Line', 'Island', 'The water city of Water 7.', 'Episode 229', 'Chapter 322', 'https://static.wikia.nocookie.net/onepiece/images/9/93/Water_7_Infobox.png');
 
 
 INSERT INTO Ships (name, name_japanese, status, type, captain_name, crew_id, debut_anime, debut_manga, image_url)
 VALUES
 ('Thousand Sunny', 'サウザンドサニー号', 'Active', 'Ship', 'Monkey D. Luffy', 1, 'Episode 317', 'Chapter 430', 'https://onepiece.fandom.com/wiki/Thousands_Sunny'),
 ('Moby Dick', 'モビーディック号', 'Destroyed', 'Large Battleship', 'Edward Newgate', 2, 'Episode 151', 'Chapter 234', 'https://onepiece.fandom.com/wiki/Moby_Dick');
+
+CREATE TABLE Accounts (
+    id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR (100) NOT NULL,
+    password VARCHAR (100) NOT NULL
+);

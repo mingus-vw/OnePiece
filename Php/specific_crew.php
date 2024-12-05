@@ -67,9 +67,18 @@ if (isset($_GET['id'])) {
       </div>
     </div>
 
-    <div class="mt-4">
-      <a href="crews.php" class="btn btn-secondary">Back to Crews</a>
-    </div>
+    <div class="pt-2 d-flex gap-2">
+    <a href="crews.php" class="btn btn-secondary">Back to Crews</a>
+    <a href="edit_crew.php?id=<?php echo htmlspecialchars($crew['id']); ?>" class="btn btn-primary">
+    Edit Crew
+    </a>
+    <a href="delete_crew.php?id=<?php echo htmlspecialchars($crew['id']); ?>" class="btn btn-danger">
+  Delete Crew
+  </a>
+
+
   </div>
+</div>
+<?php include 'footer.php'; ?>
 </body>
 </html>
