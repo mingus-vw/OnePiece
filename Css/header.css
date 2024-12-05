@@ -181,6 +181,19 @@
     text-decoration: none;
   }
   
-  .login-button:hover, #open-register:hover {
+.login-button:hover, #open-register:hover {
     background-color: #737375;
   }
+
+.dropdown-menu {
+    position: absolute;
+    z-index: 1050; 
+    top: 100%;
+    left: 0;
+}
+
+#navbar-base {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+}
