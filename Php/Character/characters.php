@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Character Page</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../Css/characters.css">
+  <link rel="stylesheet" href="../../Css/characters.css">
 </head>
 <body>
-  <?php include '../Database/connection.php' ?>
-  <?php include 'header.php'; ?>
+  <?php include '../../Database/connection.php' ?>
+  <?php include '../Misc/header.php'; ?>
 
   <div class="container pt-5">
     <div class="row">
@@ -30,7 +30,8 @@
       <?php } ?>
     </div>
   </div>
+  <a href="../Character/create_character.php" class="createButton">Create Character</a>
 
-  <?php include 'footer.php'; ?>
+  <?php include '../Misc/footer.php'; ?>
 </body>
 </html>

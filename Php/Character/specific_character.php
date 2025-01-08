@@ -1,7 +1,7 @@
 <?php
 
-include 'header.php';
-include '../Database/connection.php';
+include '../Misc/header.php';
+include '../../Database/connection.php';
 
 if (isset($_GET['id'])) {
   $characterStmt = $pdo->prepare("SELECT * FROM Characters WHERE id = :id");
@@ -94,7 +94,7 @@ if (isset($_GET['id'])) {
                     }
                     ?>
                     <?php if ($characterCrew): ?>
-                    <a href="../specific_crew.php?id=<?php echo $characterCrew['id']; ?>" class="btn btn-secondary ms-3">See crew</a>
+                    <a href="../Crews/specific_crew.php?id=<?php echo $characterCrew['id']; ?>" class="btn btn-secondary ms-3">See crew</a>
                     <?php endif; ?>
                 </td>
             </tr>
@@ -128,9 +128,16 @@ if (isset($_GET['id'])) {
       </div>
     </div>
 
-    <div class="mt-4">
-      <a href="characters.php" class="btn btn-secondary">Back to Characters</a>
+    <div class="pt-2 d-flex gap-2">
+    <a href="crews.php" class="btn btn-secondary">Back to Crews</a>
+    <a href="edit_character.php?id=<?php echo htmlspecialchars($character['id']); ?>" class="btn btn-primary">
+    Edit Character
+    </a>
+    <a href="delete_character.php?id=<?php echo htmlspecialchars($character['id']); ?>" class="btn btn-danger">
+    Delete Character
+    </a>
     </div>
-  </div>
+</div>
+  <?php include '../Misc/footer.php'; ?>
 </body>
 </html>

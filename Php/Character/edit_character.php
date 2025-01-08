@@ -1,6 +1,6 @@
 <?php
 
-include '../Database/connection.php';
+include '../../Database/connection.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $stmt = $pdo->prepare('UPDATE Crews SET name = :name, jolly_roger_image_url = :jolly_roger_image_url, crew_description = :crew_description, captain_name = :captain_name, debut_anime = :debut_anime, debut_manga = :debut_manga, main_ship_name = :main_ship_name, main_ship_description = :main_ship_description, main_ship_image_url = :main_ship_image_url WHERE id = :id');
@@ -47,7 +47,7 @@ if (isset($_GET['id'])) {
   <link rel="stylesheet" href="../Css/characters.css">
 </head>
 <body>
-  <?php include 'header.php'; ?>
+  <?php include '../Misc/header.php'; ?>
 
 <form method="POST">
     <input type="hidden" name="id" value="<?= htmlspecialchars($crew['id']) ?>">
@@ -91,6 +91,6 @@ if (isset($_GET['id'])) {
         <button type="submit" class="btn btn-primary">Update Crew</button>
 </form>
 
-<?php include 'footer.php'; ?>
+<?php include '../Misc/footer.php'; ?>
 </body>
 </html>
