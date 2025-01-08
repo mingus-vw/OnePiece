@@ -1,5 +1,5 @@
 <?php
-include('../Database/connection.php');
+include('../../Database/connection.php');
 session_start();
 
 $email = $_POST['email'];
@@ -16,7 +16,7 @@ try {
 
         if (password_verify($password, $account['password'])) {
             $_SESSION['email'] = $email;
-            header('Location: index.php');
+            header('Location: ../index.php');
             exit();
         } else {
             echo "Ongeldig wachtwoord.";

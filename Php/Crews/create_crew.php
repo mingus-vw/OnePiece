@@ -1,6 +1,6 @@
 <?php
 
-include '../Database/connection.php';
+include '../../Database/connection.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $stmt = $pdo->prepare('INSERT INTO Crews (name, jolly_roger_image_url, crew_description, captain_name, debut_anime, debut_manga, main_ship_name, main_ship_description, main_ship_image_url) VALUES (:name, :jolly_roger_image_url, :crew_description, :captain_name, :debut_anime, :debut_manga, :main_ship_name, :main_ship_description, :main_ship_image_url)');
@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <link rel="stylesheet" href="../Css/characters.css">
 </head>
 <body>
-  <?php include 'header.php'; ?>
+  <?php include '../Misc/header.php'; ?>
 
 <form method="POST">
   <div class="mb-3">
@@ -71,5 +71,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
     <button type="submit" class="btn btn-primary">Create Crew</button>
   </form>
-
+  <?php include '../Misc/footer.php'; ?>
 </body>
+</html>

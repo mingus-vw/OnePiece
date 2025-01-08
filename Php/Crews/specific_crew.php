@@ -1,7 +1,7 @@
 <?php
 
-include 'header.php';
-include '../Database/connection.php';
+include '../Misc/header.php';
+include '../../Database/connection.php';
 
 if (isset($_GET['id'])) {
   $crewStmt = $pdo->prepare("SELECT * FROM Crews WHERE id = :id");
@@ -9,11 +9,11 @@ if (isset($_GET['id'])) {
   $crew = $crewStmt->fetch();
 
   if (!$crew) {
-    header('Location: characters.php');
+    header('Location: crews.php');
     exit;
   }
 } else {
-  header('Location: characters.php');
+  header('Location: crews.php');
   exit;
 }
 
@@ -26,7 +26,7 @@ if (isset($_GET['id'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php echo htmlspecialchars($crew['name']); ?> - Crew Details</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../Css/specific_crew.css">
+  <link rel="stylesheet" href="../../Css/specific_crew.css">
 </head>
 <body>
   <div class="container my-5">
@@ -75,10 +75,11 @@ if (isset($_GET['id'])) {
     <a href="delete_crew.php?id=<?php echo htmlspecialchars($crew['id']); ?>" class="btn btn-danger">
   Delete Crew
   </a>
+</div>
 
 
   </div>
 </div>
-<?php include 'footer.php'; ?>
+<?php include '../Misc/footer.php'; ?>
 </body>
 </html>

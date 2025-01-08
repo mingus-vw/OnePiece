@@ -1,5 +1,5 @@
 <?php
-include('../Database/connection.php');
+include('../../Database/connection.php');
 
 $newEmail = $_POST['new-email'];
 $newPassword = $_POST['new-password'];
@@ -26,7 +26,7 @@ try {
         $insertStmt->bindParam(':password', $hashedPassword);
         $insertStmt->execute();
 
-        header('Location: index.php');
+        header('Location: ../index.php');
         exit();
     }
 } catch (PDOException $e) {
