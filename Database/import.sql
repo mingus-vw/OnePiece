@@ -37,7 +37,7 @@ CREATE TABLE Characters (
     is_pirate BOOLEAN NOT NULL,
     is_marine BOOLEAN NOT NULL,
     crew_id INT,
-    FOREIGN KEY (crew_id) REFERENCES Crews(id),
+    FOREIGN KEY (crew_id) REFERENCES Crews(id) ON DELETE SET NULL,
     bounty INT NOT NULL,
     devil_fruit VARCHAR(255),
     armement_haki BOOLEAN NOT NULL,
@@ -48,6 +48,7 @@ CREATE TABLE Characters (
     character_description TEXT NOT NULL,
     image_url VARCHAR(255) NOT NULL
 );
+
 
 INSERT INTO Characters (name, alias, epithet, race, status, origin, age, age_post_timeskip, occupation, is_pirate, is_marine, crew_id, bounty, devil_fruit, armement_haki, observation_haki, conqueror_haki, debut_anime, debut_manga, character_description, image_url)
 VALUES
@@ -74,13 +75,14 @@ CREATE TABLE DevilFruits (
     type VARCHAR(255) NOT NULL,
     devilfruit_description TEXT NOT NULL,
     user_id INT,
-    FOREIGN KEY (user_id) REFERENCES Characters(id),
+    FOREIGN KEY (user_id) REFERENCES Characters(id) ON DELETE SET NULL,
     former_user_id INT,
-    FOREIGN KEY (former_user_id) REFERENCES Characters(id),
+    FOREIGN KEY (former_user_id) REFERENCES Characters(id) ON DELETE SET NULL,
     debut_anime VARCHAR(255) NOT NULL,
     debut_manga VARCHAR(255) NOT NULL,
     image_url VARCHAR(255) NOT NULL
 );
+
 
 CREATE TABLE Ships (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -90,7 +92,7 @@ CREATE TABLE Ships (
     type VARCHAR(255) NOT NULL,
     captain_name VARCHAR(255) NOT NULL,
     crew_id INT,
-    FOREIGN KEY (crew_id) REFERENCES Crews(id),
+    FOREIGN KEY (crew_id) REFERENCES Crews(id) ON DELETE SET NULL,
     debut_anime VARCHAR(255) NOT NULL,
     debut_manga VARCHAR(255) NOT NULL,
     image_url VARCHAR(255) NOT NULL
@@ -99,7 +101,7 @@ CREATE TABLE Ships (
 CREATE TABLE Marines (
     id INT PRIMARY KEY AUTO_INCREMENT,
     character_id INT,
-    FOREIGN KEY (character_id) REFERENCES Characters(id),
+    FOREIGN KEY (character_id) REFERENCES Characters(id) ON DELETE SET NULL,
     rank VARCHAR(255) NOT NULL,
     base VARCHAR(255) NOT NULL
 );
@@ -107,9 +109,9 @@ CREATE TABLE Marines (
 CREATE TABLE Pirates (
     id INT PRIMARY KEY AUTO_INCREMENT,
     character_id INT,
-    FOREIGN KEY (character_id) REFERENCES Characters(id),
+    FOREIGN KEY (character_id) REFERENCES Characters(id) ON DELETE SET NULL,
     crew_id INT,
-    FOREIGN KEY (crew_id) REFERENCES Crews(id),
+    FOREIGN KEY (crew_id) REFERENCES Crews(id) ON DELETE SET NULL,
     bounty INT NOT NULL
 );
 

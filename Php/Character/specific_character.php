@@ -129,13 +129,14 @@ if (isset($_GET['id'])) {
     </div>
 
     <div class="pt-2 d-flex gap-2">
-    <a href="crews.php" class="btn btn-secondary">Back to Crews</a>
+    <a href="../Crews/crews.php" class="btn btn-secondary">Back to Crews</a>
     <a href="edit_character.php?id=<?php echo htmlspecialchars($character['id']); ?>" class="btn btn-primary">
     Edit Character
     </a>
-    <a href="delete_character.php?id=<?php echo htmlspecialchars($character['id']); ?>" class="btn btn-danger">
-    Delete Character
-    </a>
+    <form method="post" action="delete_character.php" onsubmit="return confirm('Are you sure you want to delete this devilfruit?');">
+        <input type="hidden" name="id" value="<?php echo intval($_GET['id']); ?>">
+        <button type="submit" class="btn btn-danger">Delete Character</button>
+    </form>
     </div>
 </div>
   <?php include '../Misc/footer.php'; ?>

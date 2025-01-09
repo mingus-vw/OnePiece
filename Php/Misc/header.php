@@ -29,7 +29,7 @@ function getEmail() {
                 <a class="nav-link" href="../Crews/crews.php">Crews</a>
             </li>
             <li class="nav-item active" id="navbar-text">
-                <a class="nav-link" href="marines.php">Devil Fruits</a>
+                <a class="nav-link" href="../DevilFruits/devilfruits.php">Devil Fruits</a>
             </li>
         </ul>
     </div>
@@ -44,7 +44,7 @@ function getEmail() {
     Dropdown button
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="islands.php">Islands</a>
+    <a class="dropdown-item" href="../Islands/islands.php">Islands</a>
     <a class="dropdown-item" href="marines.php">Marines</a>
     <a class="dropdown-item" href="pirates.php">Pirates</a>
     <a class="dropdown-item" href="#">Top 100 PR</a>

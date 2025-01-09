@@ -8,8 +8,8 @@
   <link rel="stylesheet" href="../Css/characters.css">
 </head>
 <body>
-  <?php include '../Database/connection.php' ?>
-  <?php include 'header.php'; ?>
+  <?php include '../../Database/connection.php' ?>
+  <?php include '../Misc/header.php'; ?>
 
   <div class="container pt-3 justify-content-center d-flex">
     <a href="create_devilfruit.php" class="btn btn-success">Create New Devilfruit</a>
@@ -35,6 +35,7 @@
     </div>
   </div>
 
-  <?php include 'footer.php'; ?>
+  <?php include '../Misc/footer.php'; ?>
+  
 </body>
 </html>

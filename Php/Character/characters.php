@@ -11,6 +11,10 @@
   <?php include '../../Database/connection.php' ?>
   <?php include '../Misc/header.php'; ?>
 
+  <div class="container pt-3 justify-content-center d-flex">
+    <a href="create_character.php" class="btn btn-success">Create New Character</a>
+  </div> 
+
   <div class="container pt-5">
     <div class="row">
       <?php
@@ -30,8 +34,6 @@
       <?php } ?>
     </div>
   </div>
-  <a href="../Character/create_character.php" class="createButton">Create Character</a>
-
   <?php include '../Misc/footer.php'; ?>
 </body>
 </html>
