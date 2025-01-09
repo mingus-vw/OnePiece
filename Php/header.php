@@ -20,6 +20,8 @@
             <li class="nav-item active" id="navbar-text">
                 <a class="nav-link" href="devilfruits.php">Devil fruits</a>
             </li>
+            <li class="nav-item active" id="navbar-text">
+                <a class="nav-link" href="islands.php">Islands</a>
         </ul>
     </div>
     <button type="button" class="btn" id="sign-up">Sign up</button>
