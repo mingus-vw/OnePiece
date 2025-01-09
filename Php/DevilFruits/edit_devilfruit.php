@@ -1,6 +1,6 @@
 <?php
-include 'header.php';
-include '../Database/connection.php';
+include '../Misc/header.php';
+include '../../Database/connection.php';
 
 if (!isset($_GET['id'])) {
     header('Location: devilfruits.php');
@@ -72,20 +72,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <h1>Edit Devil Fruit: <?php echo htmlspecialchars($devilfruit['name']); ?></h1>
     <form method="POST" action="edit_devilfruit.php?id=<?php echo $devilfruit_id; ?>">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($devilfruit['name']); ?>" required>
-
-        <label for="name_japanese">Japanese Name:</label>
-        <input type="text" id="name_japanese" name="name_japanese" value="<?php echo htmlspecialchars($devilfruit['name_japanese']); ?>" required>
-
-        <label for="type">Type:</label>
-        <input type="text" id="type" name="type" value="<?php echo htmlspecialchars($devilfruit['type']); ?>" required>
-
-        <label for="devilfruit_description">Description:</label>
-        <textarea id="devilfruit_description" name="devilfruit_description" required><?php echo htmlspecialchars($devilfruit['devilfruit_description']); ?></textarea>
-
-        <label for="user_id">User:</label>
-        <select id="user_id" name="user_id">
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" name="name" value="<?php echo htmlspecialchars($devilfruit['name']); ?>" required>
+    </div>
+    <div class="mb-3">
+        <label for="name_japanese" class="form-label">Japanese Name</label>
+        <input type="text" class="form-control" id="name_japanese" name="name_japanese" value="<?php echo htmlspecialchars($devilfruit['name_japanese']); ?>" required>
+    </div>
+    <div class="mb-3">
+        <label for="type" class="form-label">Type</label>
+        <input type="text" class="form-control" id="type" name="type" value="<?php echo htmlspecialchars($devilfruit['type']); ?>" required>
+    </div>
+    <div class="mb-3">
+        <label for="devilfruit_description" class="form-label">Description</label>
+        <textarea class="form-control" id="devilfruit_description" name="devilfruit_description" required><?php echo htmlspecialchars($devilfruit['devilfruit_description']); ?></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="user_id" class="form-label">User</label>
+        <select class="form-select" id="user_id" name="user_id">
             <option value="">None</option>
             <?php foreach ($characters as $character): ?>
                 <option value="<?php echo $character['id']; ?>" <?php echo $devilfruit['user_id'] == $character['id'] ? 'selected' : ''; ?>>
@@ -93,9 +98,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </option>
             <?php endforeach; ?>
         </select>
-
-        <label for="former_user_id">Former User:</label>
-        <select id="former_user_id" name="former_user_id">
+    </div>
+    <div class="mb-3">
+        <label for="former_user_id" class="form-label">Former User</label>
+        <select class="form-select" id="former_user_id" name="former_user_id">
             <option value="">None</option>
             <?php foreach ($characters as $character): ?>
                 <option value="<?php echo $character['id']; ?>" <?php echo $devilfruit['former_user_id'] == $character['id'] ? 'selected' : ''; ?>>
@@ -103,17 +109,626 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </option>
             <?php endforeach; ?>
         </select>
+    </div>
+    <div class="mb-3">
+        <label for="debut_anime" class="form-label">Debut (Anime)</label>
+        <input type="text" class="form-control" id="debut_anime" name="debut_anime" value="<?php echo htmlspecialchars($devilfruit['debut_anime']); ?>" required>
+    </div>
+    <div class="mb-3">
+        <label for="debut_manga" class="form-label">Debut (Manga)</label>
+        <input type="text" class="form-control" id="debut_manga" name="debut_manga" value="<?php echo htmlspecialchars($devilfruit['debut_manga']); ?>" required>
+    </div>
+    <div class="mb-3">
+        <label for="image_url" class="form-label">Image URL</label>
+        <input type="text" class="form-control" id="image_url" name="image_url" value="<?php echo htmlspecialchars($devilfruit['image_url']); ?>" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>
 
-        <label for="debut_anime">Debut (Anime):</label>
-        <input type="text" id="debut_anime" name="debut_anime" value="<?php echo htmlspecialchars($devilfruit['debut_anime']); ?>" required>
 
-        <label for="debut_manga">Debut (Manga):</label>
-        <input type="text" id="debut_manga" name="debut_manga" value="<?php echo htmlspecialchars($devilfruit['debut_manga']); ?>" required>
 
-        <label for="image_url">Image URL:</label>
-        <input type="text" id="image_url" name="image_url" value="<?php echo htmlspecialchars($devilfruit['image_url']); ?>" required>
 
-        <button type="submit">Save Changes</button>
-    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+    <?php include '../Misc/footer.php'; ?>
 </body>
 </html>

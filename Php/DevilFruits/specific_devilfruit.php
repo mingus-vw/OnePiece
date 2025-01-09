@@ -1,7 +1,7 @@
 <?php
 
-include 'header.php';
-include '../Database/connection.php';
+include '../Misc/header.php';
+include '../../Database/connection.php';
 
 if (isset($_GET['id'])) {
     $characterStmt = $pdo->prepare("SELECT * FROM DevilFruits WHERE id = :id");
@@ -25,15 +25,12 @@ if (isset($_GET['id'])) {
     exit;
 }
 
-// Handle form submission for deletion
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete'])) {
     $devilfruit_id = intval($_POST['id']);
 
-    // Delete the Devil Fruit
     $deleteStmt = $pdo->prepare("DELETE FROM DevilFruits WHERE id = :id");
     $deleteStmt->execute(['id' => $devilfruit_id]);
 
-    // Redirect after deletion
     header('Location: devilfruits.php');
     exit;
 }
@@ -104,7 +101,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete'])) {
     <div class="mt-4">
       <a href="devilfruits.php" class="btn btn-secondary">Back to Devilfruits</a>
       <a href="edit_devilfruit.php?id=<?php echo intval($character['id']); ?>" class="btn btn-primary">Edit Devil Fruit</a>
-    </div>
     <?php if (isset($_GET['id'])) : ?>
     <form method="post" action="delete_devilfruit.php" onsubmit="return confirm('Are you sure you want to delete this devilfruit?');">
         <input type="hidden" name="id" value="<?php echo intval($_GET['id']); ?>">
@@ -112,6 +108,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete'])) {
     </form>
     <?php endif; ?>
     </div>
-    <?php include 'footer.php'; ?>
+    <?php include '../Misc/footer.php'; ?>
 </body>
 </html>

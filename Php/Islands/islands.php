@@ -8,8 +8,8 @@
   <link rel="stylesheet" href="../Css/characters.css">
 </head>
 <body>
-  <?php include '../Database/connection.php' ?>
-  <?php include 'header.php'; ?>
+  <?php include '../../Database/connection.php' ?>
+  <?php include '../Misc/header.php'; ?>
 
   <div class="container pt-5">
     <div class="row">
@@ -31,6 +31,6 @@
     </div>
   </div>
 
-  <?php include 'footer.php'; ?>
+  <?php include '../Misc/footer.php'; ?>
 </body>
 </html>

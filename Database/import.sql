@@ -169,7 +169,7 @@ VALUES
 ('Punk Hazard', 'パンクハザード', 'New World', 'Island', 'The volcanic island of Punk Hazard.', 'Episode 579', 'Chapter 654', 'https://static.wikia.nocookie.net/onepiece/images/3/3a/Punk_Hazard_Infobox.png'),
 ('Sabaody Archipelago', 'シャボンディ諸島', 'Grand Line', 'Archipelago', 'The archipelago of Sabaody.', 'Episode 385', 'Chapter 498', 'https://static.wikia.nocookie.net/onepiece/images/c/ca/Sabaody_Archipelago_Infobox.png'),
 ('Skypiea', 'スカイピア', 'Grand Line', 'Island', 'The sky island of Skypiea.', 'Episode 144', 'Chapter 239', 'https://static.wikia.nocookie.net/onepiece/images/4/44/Skypiea_Infobox.png'),
-('Water 7', 'ウォーターセブン', 'Grand Line', 'Island', 'The water city of Water 7.', 'Episode 229', 'Chapter 322', 'https://static.wikia.nocookie.net/onepiece/images/9/93/Water_7_Infobox.png');
+('Water 7', 'ウォーターセブン', 'Grand Line', 'Island', 'The water city of Water 7.', 'Episode 229', 'Chapter 322', 'https://static.wikia.nocookie.net/onepiece/images/9/93/Water_7_Infobox.png'),
 ('Wano Country', 'ワノ国', 'New World', 'Country', 'The isolated country of Wano.', 'Episode 892', 'Chapter 909', 'https://static.wikia.nocookie.net/onepiece/images/4/4b/Wano_Country_Infobox.png');
 
 INSERT INTO Ships (name, name_japanese, status, type, captain_name, crew_id, debut_anime, debut_manga, image_url)

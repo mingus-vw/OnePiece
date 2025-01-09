@@ -145,4 +145,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <label for="image_url" class="form-label">Image URL</label>
         <input type="text" class="form-control" id="image_url" name="image_url">
     </div>
-    <button type="submit" class="btn btn-primary">
+    <button type="submit" class="btn btn-primary"> Create Character</button>
+</form>
+
+<?php include '../Misc/footer.php'; ?>
+
+</body>
+</html>

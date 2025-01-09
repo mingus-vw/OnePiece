@@ -1,8 +1,7 @@
 <?php
-    include 'header.php';
-    include '../Database/connection.php';
+    include '../Misc/header.php';
+    include '../../Database/connection.php';
 
-// Handle form submission
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $name = $_POST['name'];
         $name_japanese = $_POST['name_japanese'];
@@ -14,7 +13,6 @@
         $debut_manga = $_POST['debut_manga'];
         $image_url = $_POST['image_url'];
 
-        // Insert the new DevilFruit
         $stmt = $pdo->prepare("
         INSERT INTO DevilFruits 
         (name, name_japanese, type, devilfruit_description, user_id, former_user_id, debut_anime, debut_manga, image_url) 
@@ -34,11 +32,10 @@
             'image_url' => $image_url,
         ]);
 
-        header('Location: devilfruits.php'); // Redirect to the DevilFruits listing page
+        header('Location: devilfruits.php');
         exit;
     }
 
-// Fetch characters for dropdowns
     $characters = $pdo->query("SELECT id, name FROM Characters")->fetchAll(PDO::FETCH_ASSOC);
     ?>
 
@@ -95,8 +92,7 @@
 
         <button type="submit">Create</button>
     </form>
-</body>
-</html>
 
+    <?php include '../Misc/footer.php'; ?>
 </body>
 </html>
