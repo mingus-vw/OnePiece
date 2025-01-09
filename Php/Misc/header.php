@@ -13,7 +13,7 @@ function getEmail() {
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="../../Css/header.css">
 <nav class="navbar-base navbar-expand-lg navbar-light sticky-top" id="navbar-base">
-    <a href="index.php">
+    <a href="../Misc/main.php">
     <img src="../../Images/One_Piece_Logo-min.png" alt="Logo" id="navbar-logo">
     </a>
     <form class="form-inline my-2 my-lg-0" id="search-bar">
