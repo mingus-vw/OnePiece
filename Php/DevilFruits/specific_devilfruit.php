@@ -38,8 +38,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete'])) {
 
 <!DOCTYPE html>
 <html lang="en">
-<!DOCTYPE html>
-<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -59,7 +57,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete'])) {
       <div class="col-lg-8">
         <h2>Devilfruit Information</h2>
         <table class="table table-striped">
-            
           <tbody>
             <tr>
               <th>Name</th>
@@ -67,47 +64,48 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete'])) {
             </tr>
             <tr>
               <th>Japanese Name</th>
-                <td><?php echo htmlspecialchars($character['name_japanese']); ?></td>
+              <td><?php echo htmlspecialchars($character['name_japanese']); ?></td>
             </tr>
             <tr>
               <th>Type</th>
               <td><?php echo htmlspecialchars($character['type']); ?></td>
             </tr>
             <tr>
-            <th>User</th>
-                <td><?php echo htmlspecialchars($characterUser['name'] ?? 'N/A'); ?></td>
+              <th>User</th>
+              <td><?php echo htmlspecialchars($characterUser['name'] ?? 'N/A'); ?></td>
             </tr>
             <tr>
-            <th>Former User</th>
-                <td><?php echo htmlspecialchars($characterFormerUser['name'] ?? 'N/A'); ?></td>
+              <th>Former User</th>
+              <td><?php echo htmlspecialchars($characterFormerUser['name'] ?? 'N/A'); ?></td>
             </tr>
             <tr>
-                <th>Debut Anime</th>
-                <td><?php echo htmlspecialchars($character['debut_anime']); ?></td>
+              <th>Debut Anime</th>
+              <td><?php echo htmlspecialchars($character['debut_anime']); ?></td>
             </tr>
             <tr>
-                <th>Debut Manga</th>
-                <td><?php echo htmlspecialchars($character['debut_manga']); ?></td>
+              <th>Debut Manga</th>
+              <td><?php echo htmlspecialchars($character['debut_manga']); ?></td>
             </tr>
-            </tbody>
+          </tbody>
         </table>
-        </div>
-        <div class="col-lg-4">
-          <h2>Devilfruit Description</h2>
-          <p><?php echo htmlspecialchars($character['devilfruit_description']); ?></p>
-        </div>
-        </div>
+      </div>
 
-    <div class="mt-4">
+      <div class="col-lg-4">
+        <h2>Description</h2>
+        <p><?php echo nl2br(htmlspecialchars($character['devilfruit_description'])); ?></p>
+      </div>
+    </div>
+
+    <div class="pt-2 d-flex gap-2">
       <a href="devilfruits.php" class="btn btn-secondary">Back to Devilfruits</a>
       <a href="edit_devilfruit.php?id=<?php echo intval($character['id']); ?>" class="btn btn-primary">Edit Devil Fruit</a>
-    <?php if (isset($_GET['id'])) : ?>
-    <form method="post" action="delete_devilfruit.php" onsubmit="return confirm('Are you sure you want to delete this devilfruit?');">
-        <input type="hidden" name="id" value="<?php echo intval($_GET['id']); ?>">
-        <button type="submit" class="btn btn-danger">Delete Devilfruit</button>
-    </form>
-    <?php endif; ?>
+      <form method="post" action="delete_devilfruit.php" onsubmit="return confirm('Are you sure you want to delete this devilfruit?');">
+          <input type="hidden" name="id" value="<?php echo intval($_GET['id']); ?>">
+          <button type="submit" class="btn btn-danger">Delete Devilfruit</button>
+      </form>
     </div>
-    <?php include '../Misc/footer.php'; ?>
+  </div>
+
+  <?php include '../Misc/footer.php'; ?>
 </body>
 </html>
