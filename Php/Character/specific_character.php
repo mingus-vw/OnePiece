@@ -129,7 +129,7 @@ if (isset($_GET['id'])) {
     </div>
 
     <div class="pt-2 d-flex gap-2">
-    <a href="../Crews/crews.php" class="btn btn-secondary">Back to Crews</a>
+    <a href="../Character/characters.php" class="btn btn-secondary">Back to Characters</a>
     <a href="edit_character.php?id=<?php echo htmlspecialchars($character['id']); ?>" class="btn btn-primary">
     Edit Character
     </a>
