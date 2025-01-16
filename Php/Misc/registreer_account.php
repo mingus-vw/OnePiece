@@ -26,7 +26,7 @@ try {
         $insertStmt->bindParam(':password', $hashedPassword);
         $insertStmt->execute();
 
-        header('Location: ../index.php');
+        header('Location: ../main.php');
         exit();
     }
 } catch (PDOException $e) {
