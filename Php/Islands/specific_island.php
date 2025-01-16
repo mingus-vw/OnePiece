@@ -1,7 +1,7 @@
 <?php
 
-include 'header.php';
-include '../Database/connection.php';
+include '../Misc/header.php';
+include '../../Database/connection.php';
 
 if (isset($_GET['id'])) {
   $islandStmt = $pdo->prepare("SELECT * FROM Islands WHERE id = :id");
@@ -66,5 +66,6 @@ if (isset($_GET['id'])) {
       <a href="islands.php" class="btn btn-secondary">Back to Islands</a>
     </div>
   </div>
+  <?php include '../Misc/footer.php'; ?>
 </body>
 </html>

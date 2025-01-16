@@ -37,7 +37,7 @@ CREATE TABLE Characters (
     is_pirate BOOLEAN NOT NULL,
     is_marine BOOLEAN NOT NULL,
     crew_id INT,
-    FOREIGN KEY (crew_id) REFERENCES Crews(id),
+    FOREIGN KEY (crew_id) REFERENCES Crews(id) ON DELETE SET NULL,
     bounty INT NOT NULL,
     devil_fruit VARCHAR(255),
     armement_haki BOOLEAN NOT NULL,
@@ -48,6 +48,7 @@ CREATE TABLE Characters (
     character_description TEXT NOT NULL,
     image_url VARCHAR(255) NOT NULL
 );
+
 
 INSERT INTO Characters (name, alias, epithet, race, status, origin, age, age_post_timeskip, occupation, is_pirate, is_marine, crew_id, bounty, devil_fruit, armement_haki, observation_haki, conqueror_haki, debut_anime, debut_manga, character_description, image_url)
 VALUES
@@ -64,8 +65,8 @@ VALUES
 ('Edward Newgate', 'Whitebeard', 'Whitebeard', 'Human', 'Deceased', 'Unknown', 72, 74, 'Pirate', TRUE, FALSE, 2, 550000000, 'Gura Gura no Mi', TRUE, TRUE, TRUE, 'Episode 151', 'Chapter 234', 'The late captain of the Whitebeard Pirates and former Yonko.', 'https://static.wikia.nocookie.net/onepiece/images/b/b7/Edward_Newgate_Anime_Infobox.png'),
 ('Smoker', 'White Hunter Smoker', 'White Hunter', 'Human', 'Alive', 'Grand Line', 36, 38, 'Marine', FALSE, TRUE, NULL, 0, 'Moku Moku no Mi', TRUE, TRUE, FALSE, 'Episode 48', 'Chapter 98', 'The Marine Vice Admiral and former Marine Captain.', 'https://static.wikia.nocookie.net/onepiece/images/c/c4/Smoker_Anime_Post_Timeskip_Infobox.png'),
 ('Portgas D. Ace', 'Fire Fist Ace', 'Fire Fist', 'Human', 'Deceased', 'South Blue', 20, 22, 'Pirate', TRUE, FALSE, 2, 550000000, 'Mera Mera no Mi', TRUE, TRUE, TRUE, 'Episode 94', 'Chapter 154', 'The late captain of the Spade Pirates and former Whitebeard Pirates 2nd Division Commander.', 'https://static.wikia.nocookie.net/onepiece/images/4/4f/Portgas_D._Ace_Anime_Infobox.png'),
-('Monkey D. Garp', 'Garp the Fist', 'Garp the Fist', 'Human', 'Alive', 'Unknown', 78, 80, 'Marine', FALSE, TRUE, NULL, 0, NULL, TRUE, TRUE, TRUE, 'Episode 45', 'Chapter 91', 'The Marine Vice Admiral and former Marine Instructor.', 'https://static.wikia.nocookie.net/onepiece/images/e/e1/Monkey_D._Garp_Anime_Infobox.png');
-
+('Monkey D. Garp', 'Garp the Fist', 'Garp the Fist', 'Human', 'Alive', 'Unknown', 78, 80, 'Marine', FALSE, TRUE, NULL, 0, NULL, TRUE, TRUE, TRUE, 'Episode 45', 'Chapter 91', 'The Marine Vice Admiral and former Marine Instructor.', 'https://static.wikia.nocookie.net/onepiece/images/e/e1/Monkey_D._Garp_Anime_Infobox.png'),
+('Sabo', 'Lucy', 'Flame Emperor', 'Human', 'Alive', 'Unknown', 10, 22, 'Revolutionary', TRUE, FALSE, NULL, 550000000, 'Mera Mera no Mi', TRUE, TRUE, FALSE, 'Episode 663', 'Chapter 744', 'The Chief of Staff of the Revolutionary Army and former noble.', 'https://static.wikia.nocookie.net/onepiece/images/c/c2/Sabo_Anime_Infobox.png');
 
 CREATE TABLE DevilFruits (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -74,13 +75,14 @@ CREATE TABLE DevilFruits (
     type VARCHAR(255) NOT NULL,
     devilfruit_description TEXT NOT NULL,
     user_id INT,
-    FOREIGN KEY (user_id) REFERENCES Characters(id),
+    FOREIGN KEY (user_id) REFERENCES Characters(id) ON DELETE SET NULL,
     former_user_id INT,
-    FOREIGN KEY (former_user_id) REFERENCES Characters(id),
+    FOREIGN KEY (former_user_id) REFERENCES Characters(id) ON DELETE SET NULL,
     debut_anime VARCHAR(255) NOT NULL,
     debut_manga VARCHAR(255) NOT NULL,
     image_url VARCHAR(255) NOT NULL
 );
+
 
 CREATE TABLE Ships (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -90,7 +92,7 @@ CREATE TABLE Ships (
     type VARCHAR(255) NOT NULL,
     captain_name VARCHAR(255) NOT NULL,
     crew_id INT,
-    FOREIGN KEY (crew_id) REFERENCES Crews(id),
+    FOREIGN KEY (crew_id) REFERENCES Crews(id) ON DELETE SET NULL,
     debut_anime VARCHAR(255) NOT NULL,
     debut_manga VARCHAR(255) NOT NULL,
     image_url VARCHAR(255) NOT NULL
@@ -99,7 +101,7 @@ CREATE TABLE Ships (
 CREATE TABLE Marines (
     id INT PRIMARY KEY AUTO_INCREMENT,
     character_id INT,
-    FOREIGN KEY (character_id) REFERENCES Characters(id),
+    FOREIGN KEY (character_id) REFERENCES Characters(id) ON DELETE SET NULL,
     rank VARCHAR(255) NOT NULL,
     base VARCHAR(255) NOT NULL
 );
@@ -107,9 +109,9 @@ CREATE TABLE Marines (
 CREATE TABLE Pirates (
     id INT PRIMARY KEY AUTO_INCREMENT,
     character_id INT,
-    FOREIGN KEY (character_id) REFERENCES Characters(id),
+    FOREIGN KEY (character_id) REFERENCES Characters(id) ON DELETE SET NULL,
     crew_id INT,
-    FOREIGN KEY (crew_id) REFERENCES Crews(id),
+    FOREIGN KEY (crew_id) REFERENCES Crews(id) ON DELETE SET NULL,
     bounty INT NOT NULL
 );
 
@@ -128,13 +130,13 @@ CREATE TABLE Islands (
 
 INSERT INTO DevilFruits (name, name_japanese, type, devilfruit_description, user_id, former_user_id, debut_anime, debut_manga, image_url)
 VALUES
-('Gomu Gomu no Mi', 'ゴムゴムの実', 'Paramecia', 'A Paramecia-type Devil Fruit that allows the user to become a rubber human.', 1, NULL, 'Episode 1', 'Chapter 1', 'https://onepiece.fandom.com/wiki/Gomu_Gomu_no_Mi'),
-('Hito Hito no Mi', 'ヒトヒトの実', 'Zoan', 'A Zoan-type Devil Fruit that allows the user to become a human.', 6, NULL, 'Episode 81', 'Chapter 134', 'https://onepiece.fandom.com/wiki/Hito_Hito_no_Mi'),
-('Hana Hana no Mi', 'ハナハナの実', 'Paramecia', 'A Paramecia-type Devil Fruit that allows the user to sprout body parts from any surface.', 7, NULL, 'Episode 67', 'Chapter 114', 'https://onepiece.fandom.com/wiki/Hana_Hana_no_Mi'),
-('Yomi Yomi no Mi', 'ヨミヨミの実', 'Paramecia', 'A Paramecia-type Devil Fruit that allows the user to come back to life after dying.', 8, NULL, 'Episode 337', 'Chapter 442', 'https://onepiece.fandom.com/wiki/Yomi_Yomi_no_Mi'),
-('Gura Gura no Mi', 'グラグラの実', 'Paramecia', 'A Paramecia-type Devil Fruit that allows the user to create earthquakes.', 11, NULL, 'Episode 151', 'Chapter 234', 'https://onepiece.fandom.com/wiki/Gura_Gura_no_Mi'),
-('Mera Mera no Mi', 'メラメラの実', 'Logia', 'A Logia-type Devil Fruit that allows the user to become a fire human.', 13, NULL, 'Episode 94', 'Chapter 154', 'https://onepiece.fandom.com/wiki/Mera_Mera_no_Mi'),
-('Moku Moku no Mi', 'モクモクの実', 'Logia', 'A Logia-type Devil Fruit that allows the user to become a smoke human.', 14, NULL, 'Episode 325', 'Chapter 441', 'https://onepiece.fandom.com/wiki/Moku_Moku_no_Mi');
+('Gomu Gomu no Mi', 'ゴムゴムの実', 'Paramecia', 'A Paramecia-type Devil Fruit that allows the user to become a rubber human.', 1, NULL, 'Episode 1', 'Chapter 1', 'https://static.wikia.nocookie.net/onepiece/images/1/12/Gomu_Gomu_no_Mi_Infobox.png'),
+('Hito Hito no Mi', 'ヒトヒトの実', 'Zoan', 'A Zoan-type Devil Fruit that allows the user to become a human.', 6, NULL, 'Episode 81', 'Chapter 134', 'https://static.wikia.nocookie.net/onepiece/images/3/38/Hito_Hito_no_Mi_Infobox.png'),
+('Hana Hana no Mi', 'ハナハナの実', 'Paramecia', 'A Paramecia-type Devil Fruit that allows the user to sprout body parts from any surface.', 7, NULL, 'Episode 67', 'Chapter 114', 'https://static.wikia.nocookie.net/onepiece/images/2/21/Hana_Hana_no_Mi_Infobox.png'),
+('Yomi Yomi no Mi', 'ヨミヨミの実', 'Paramecia', 'A Paramecia-type Devil Fruit that allows the user to come back to life after dying.', 8, NULL, 'Episode 337', 'Chapter 442', 'https://static.wikia.nocookie.net/onepiece/images/3/3b/Yomi_Yomi_no_Mi_Infobox.png'),
+('Gura Gura no Mi', 'グラグラの実', 'Paramecia', 'A Paramecia-type Devil Fruit that allows the user to create earthquakes.', 11, NULL, 'Episode 151', 'Chapter 234', 'https://static.wikia.nocookie.net/onepiece/images/e/e3/Gura_Gura_no_Mi_Infobox.png'),
+('Mera Mera no Mi', 'メラメラの実', 'Logia', 'A Logia-type Devil Fruit that allows the user to become a fire human.', 15, 13, 'Episode 94', 'Chapter 154', 'https://static.wikia.nocookie.net/onepiece/images/8/8c/Mera_Mera_no_Mi_Infobox.png'),
+('Moku Moku no Mi', 'モクモクの実', 'Logia', 'A Logia-type Devil Fruit that allows the user to become a smoke human.', 14, NULL, 'Episode 325', 'Chapter 441', 'https://static.wikia.nocookie.net/onepiece/images/8/8d/Moku_Moku_no_Mi_Infobox.png');
 
 INSERT INTO Pirates (character_id, crew_id, bounty)
 VALUES
@@ -169,8 +171,8 @@ VALUES
 ('Punk Hazard', 'パンクハザード', 'New World', 'Island', 'The volcanic island of Punk Hazard.', 'Episode 579', 'Chapter 654', 'https://static.wikia.nocookie.net/onepiece/images/3/3a/Punk_Hazard_Infobox.png'),
 ('Sabaody Archipelago', 'シャボンディ諸島', 'Grand Line', 'Archipelago', 'The archipelago of Sabaody.', 'Episode 385', 'Chapter 498', 'https://static.wikia.nocookie.net/onepiece/images/c/ca/Sabaody_Archipelago_Infobox.png'),
 ('Skypiea', 'スカイピア', 'Grand Line', 'Island', 'The sky island of Skypiea.', 'Episode 144', 'Chapter 239', 'https://static.wikia.nocookie.net/onepiece/images/4/44/Skypiea_Infobox.png'),
-('Water 7', 'ウォーターセブン', 'Grand Line', 'Island', 'The water city of Water 7.', 'Episode 229', 'Chapter 322', 'https://static.wikia.nocookie.net/onepiece/images/9/93/Water_7_Infobox.png');
-
+('Water 7', 'ウォーターセブン', 'Grand Line', 'Island', 'The water city of Water 7.', 'Episode 229', 'Chapter 322', 'https://static.wikia.nocookie.net/onepiece/images/9/93/Water_7_Infobox.png'),
+('Wano Country', 'ワノ国', 'New World', 'Country', 'The isolated country of Wano.', 'Episode 892', 'Chapter 909', 'https://static.wikia.nocookie.net/onepiece/images/4/4b/Wano_Country_Infobox.png');
 
 INSERT INTO Ships (name, name_japanese, status, type, captain_name, crew_id, debut_anime, debut_manga, image_url)
 VALUES

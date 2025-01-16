@@ -3,37 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Character Page</title>
+  <title>Devilfruit Page</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../../Css/characters.css">
+  <link rel="stylesheet" href="../Css/characters.css">
 </head>
 <body>
   <?php include '../../Database/connection.php' ?>
   <?php include '../Misc/header.php'; ?>
 
   <div class="container pt-3 justify-content-center d-flex">
-    <a href="create_character.php" class="btn btn-success">Create New Character</a>
-  </div> 
+    <a href="create_devilfruit.php" class="btn btn-success">Create New Devilfruit</a>
+  </div>
 
   <div class="container pt-5">
     <div class="row">
       <?php
-      $stmt = $pdo->query("SELECT id, name, image_url, character_description FROM Characters");
+      $stmt = $pdo->query("SELECT id, name, image_url, devilfruit_description FROM DevilFruits");
 
       while ($row = $stmt->fetch()) { ?>
         <div class="col-md-4 mb-4">
           <div class="card" style="width: 18rem;">
-            <img src="<?php echo htmlspecialchars($row['image_url']); ?>" class="card-img-top" alt="Character image">
+            <img src="<?php echo htmlspecialchars($row['image_url']); ?>" class="card-img-top" alt="devilfruit image">
             <div class="card-body">
               <h5 class="card-title"><?php echo htmlspecialchars($row['name']); ?></h5>
-              <p class="card-text"><?php echo htmlspecialchars($row['character_description']); ?></p>
-              <a href="specific_character.php?id=<?php echo urlencode($row['id']); ?>" class="btn btn-primary">View character</a>
+              <p class="card-text"><?php echo htmlspecialchars($row['devilfruit_description']); ?></p>
+              <a href="specific_devilfruit.php?id=<?php echo urlencode($row['id']); ?>" class="btn btn-primary">View Devilfruit</a>
             </div>
           </div>
         </div>
       <?php } ?>
     </div>
   </div>
+
   <?php include '../Misc/footer.php'; ?>
+  
 </body>
 </html>
