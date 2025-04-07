@@ -8,17 +8,49 @@
   <link rel="stylesheet" href="../../Css/characters.css">
 </head>
 <body>
-  <?php include '../../Database/connection.php' ?>
+  <?php include '../../Database/connection.php'; ?>
   <?php include '../Misc/header.php'; ?>
 
   <div class="container pt-3 justify-content-center d-flex">
     <a href="create_character.php" class="btn btn-success">Create New Character</a>
   </div> 
 
+  <div class="container pt-3">
+    <form method="GET" action="" class="d-flex justify-content-center mb-4">
+      <select name="sort" class="form-select w-auto">
+        <option value="">ID</option>
+        <option value="pirates">Pirates</option>
+        <option value="marines">Marines</option>
+        <option value="others">Others</option>
+        <option value="alphabetical">Alphabetical</option>
+        <option value="bounty">Bounty</option>
+      </select>
+      <button type="submit" class="btn btn-primary ms-2">Sort</button>
+    </form>
+  </div>
+
   <div class="container pt-5">
     <div class="row">
       <?php
-      $stmt = $pdo->query("SELECT id, name, image_url, character_description FROM Characters");
+      $query = "SELECT id, name, image_url, character_description FROM Characters";
+
+      if (isset($_GET['sort'])) {
+        $sortOption = $_GET['sort'];
+
+        if ($sortOption === 'pirates') {
+          $query = "SELECT id, name, image_url, character_description FROM Characters WHERE is_pirate = TRUE";
+        } elseif ($sortOption === 'marines') {
+          $query = "SELECT id, name, image_url, character_description FROM Characters WHERE is_marine = TRUE";
+        } elseif ($sortOption === 'others') {
+          $query = "SELECT id, name, image_url, character_description FROM Characters WHERE is_pirate = FALSE AND is_marine = FALSE";
+        } elseif ($sortOption === 'alphabetical') {
+          $query = "SELECT id, name, image_url, character_description FROM Characters ORDER BY name ASC";
+        } elseif ($sortOption === 'bounty') {
+          $query = "SELECT id, name, image_url, character_description FROM Characters ORDER BY bounty DESC";
+        }
+      }
+
+      $stmt = $pdo->query($query);
 
       while ($row = $stmt->fetch()) { ?>
         <div class="col-md-4 mb-4">
@@ -34,6 +66,7 @@
       <?php } ?>
     </div>
   </div>
+
   <?php include '../Misc/footer.php'; ?>
 </body>
 </html>

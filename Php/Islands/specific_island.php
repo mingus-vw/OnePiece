@@ -62,9 +62,13 @@ if (isset($_GET['id'])) {
       </div>
     </div>
 
-    <div class="mt-4">
-      <a href="islands.php" class="btn btn-secondary">Back to Islands</a>
-    </div>
+    <div class="text-center mt-4">
+    <a href="../Islands/islands.php" class="btn btn-secondary">Back to Islands</a>
+      <a href="edit_island.php?id=<?php echo $islands['id']; ?>" class="btn btn-primary">Edit Island</a>
+      <form method="POST" action="delete_island.php" class="d-inline">
+        <input type="hidden" name="id" value="<?php echo $islands['id']; ?>">
+        <button type="submit" class="btn btn-danger">Delete Island</button>
+      </form>
   </div>
   <?php include '../Misc/footer.php'; ?>
 </body>
