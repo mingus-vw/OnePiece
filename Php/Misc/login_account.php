@@ -16,7 +16,7 @@ try {
 
         if (password_verify($password, $account['password'])) {
             $_SESSION['email'] = $email;
-            header('Location: ../index.php');
+            header('Location: ../main.php');
             exit();
         } else {
             echo "Ongeldig wachtwoord.";
